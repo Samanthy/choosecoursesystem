@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+	<data-sources />
+	<form-beans/>
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		
+		<action path="/choose" type="com.tarena.group3.choosecoursesystem.action.FirstChooseCourseAction" parameter="choose">
+			<forward name="success" path="/student/student_firstchoose.jsp" contextRelative="true"/>
+			<forward name="secondchoose_annou" path="/student/secondchoose_annou.do" contextRelative="true" redirect="true"></forward>
+		</action>
+		
+		<action path="/show" type="com.tarena.group3.choosecoursesystem.action.FirstChooseCourseAction" parameter="show">
+			<forward name="success" path="/student/student_firstchoose.jsp" contextRelative="true"/></action>
+			
+		<action path="/add" type="com.tarena.group3.choosecoursesystem.action.FirstChooseCourseAction" parameter="add">
+			<forward name="success" path="/student/student_firstchoose.jsp" contextRelative="true"/></action>
+			
+		<action path="/delete" type="com.tarena.group3.choosecoursesystem.action.FirstChooseCourseAction" parameter="delete">
+			<forward name="success" path="/student/student_firstchoose.jsp" contextRelative="true"/></action>
+			
+		<action path="/updatepassword" type="com.tarena.group3.choosecoursesystem.action.FirstChooseCourseAction" parameter="updatepassword">
+			<forward name="success" path="/student/student_password_update.jsp" contextRelative="true"/></action>
+	</action-mappings>
+	<controller processorClass="org.springframework.web.struts.DelegatingRequestProcessor"></controller>
+	<message-resources parameter="ApplicationResources" />
+	<plug-in
+		className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation"
+			value="/WEB-INF/FirstChooseCourse-action.xml" />
+	</plug-in>
+	
+</struts-config>
+

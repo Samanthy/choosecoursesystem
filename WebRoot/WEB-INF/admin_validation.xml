@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+<form-validation>
+	<formset>
+		<!--  对应一个form-->
+		<form name="dateForm">
+			<field property="firstChooseStartDate" depends="required,date">
+				<arg0 key="date.firstChooseStartTime"/>
+				<var>
+					<var-name>datePattern</var-name>
+					<var-value>yyyy-MM-dd</var-value>
+				</var>
+			</field>
+			<field property="firstChooseEndDate" depends="required,date">
+				<arg0 key="date.firstChooseEndDate" />
+				<var>
+					<var-name>datePattern</var-name>
+					<var-value>yyyy-MM-dd</var-value>
+				</var>
+			</field>
+			<field property="secondChooseStartDate" depends="required,date">
+				<arg0 key="date.secondChooseStartTime" name="required,date" />
+				<var>
+					<var-name>datePattern</var-name>
+					<var-value>yyyy-MM-dd</var-value>
+				</var>
+			</field>
+			<field property="secondChooseEndDate" depends="required,date">
+				<arg0 key="date.secondChooseEndDate" />
+				<var>
+					<var-name>datePattern</var-name>
+					<var-value>yyyy-MM-dd</var-value>
+				</var>
+			</field>
+		</form>
+	</formset>
+
+</form-validation>

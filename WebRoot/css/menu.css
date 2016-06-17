@@ -1,0 +1,16 @@
+.menu font a:hover,a:active{
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	color: #008800;
+	cursor: hand;
+}
+.menu font a:link,a:visited{
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	color: #6699FF;
+	cursor: hand;
+	text-decoration:none;
+}
+

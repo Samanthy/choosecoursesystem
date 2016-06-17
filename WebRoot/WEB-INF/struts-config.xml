@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans />
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<!-- 登录路径 -->
+		<action path="/login" type="com.tarena.group3.choosecoursesystem.action.LoginAction">
+			<forward name="success" path="/main.do" redirect="true"/>
+			<forward name="fail" path="/login.jsp"/>
+		</action>
+		
+		<action path="/index" type="com.tarena.group3.choosecoursesystem.action.IndexAction">
+			<forward name="main" path="/main.do" redirect="true"/>
+			<forward name="login" path="/login.jsp"/>
+		</action>
+		
+		<action path="/main" type="com.tarena.group3.choosecoursesystem.action.LoginAction">
+			<forward name="showMain" path="/main.jsp"/>
+		</action>
+		
+		<action path="/logout" type="com.tarena.group3.choosecoursesystem.action.LoginOutAction">
+			<forward name="success" path="/login.jsp" redirect="true"/>
+		</action>
+	</action-mappings>
+	<controller processorClass="org.springframework.web.struts.DelegatingRequestProcessor"></controller>
+	<message-resources parameter="ApplicationResources" />
+	<plug-in
+		className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation"
+			value="/WEB-INF/login-action.xml" />
+	</plug-in>
+</struts-config>
+

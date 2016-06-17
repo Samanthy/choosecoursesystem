@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	<bean id="roomDao" class="com.tarena.group3.choosecoursesystem.dao.jdbcTemplate.RoomDaoImpl">
+		<property name="template">
+			<ref bean="jt"/>
+		</property>
+	</bean>	
+	<bean id="adminDao" class="com.tarena.group3.choosecoursesystem.dao.jdbcTemplate.AdminDaoImpl">
+		<property name="jt">
+			<ref bean="jt"/>
+		</property>
+	</bean>	
+	<bean id="studentDao" class="com.tarena.group3.choosecoursesystem.dao.jdbcTemplate.StudentDaoImpl">
+		<property name="jt">
+			<ref bean="jt"/>
+		</property>
+	</bean>	
+	<bean id="teacherDao" class="com.tarena.group3.choosecoursesystem.dao.jdbcTemplate.TeacherDaoImpl">
+		<property name="jt">
+			<ref bean="jt"/>
+		</property>
+	</bean>	
+	<bean id="courseDao" class="com.tarena.group3.choosecoursesystem.dao.jdbcTemplate.CourseDaoJdbcImpl">
+		<property name="jt">
+			<ref bean="jt"/>
+		</property>
+		<property name="roomDao">
+			<ref bean="roomDao"/>
+		</property>
+		<property name="teacherDao">
+			<ref bean="teacherDao"/>
+		</property>
+	</bean>	
+	
+</beans>

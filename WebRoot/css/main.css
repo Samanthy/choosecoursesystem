@@ -1,0 +1,18 @@
+.tabhead {
+	background-color: #0099CC;
+	color: #FFFFFF;
+	background-position: center;
+}
+a:link {COLOR: #eeeeee; TEXT-DECORATION: none}
+a:visited {COLOR: #eeeeee; TEXT-DECORATION: none}
+a:active {COLOR: #dddddd; TEXT-DECORATION:underline}
+a:hover {COLOR: #dddddd; TEXT-DECORATION:underline}
+.moveover {
+	border: 1px solid #6666FF;
+	background-color: #FFCC99;
+	
+}
+.moveout {
+	border: 1px solid #006699;
+	
+}

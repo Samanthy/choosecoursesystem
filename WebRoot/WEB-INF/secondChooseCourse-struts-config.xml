@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="courseForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="sid" type="java.lang.String"></form-property>
+			<form-property name="tpassword" type="java.lang.String"></form-property>
+			<form-property name="tppassword" type="java.lang.String"></form-property>	
+		</form-bean>
+	</form-beans>
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<action path="/secondchoose_annou" type="com.tarena.group3.choosecoursesystem.action.SecondChooseCourseAction" parameter="secondchoose_annou">
+			<forward name="secondchoose_annou" path="/student_secondchoose_annou.jsp"/>
+		</action>
+		<action path="/deleteForSecond" type="com.tarena.group3.choosecoursesystem.action.SecondChooseCourseAction" parameter="deleteForSecond">
+			<forward name="secondchoose" path="/student_secondchoose.jsp"/>
+		</action>
+		<action path="/delete" type="com.tarena.group3.choosecoursesystem.action.SecondChooseCourseAction" parameter="delete" />
+		<action path="/secondchoose" type="com.tarena.group3.choosecoursesystem.action.SecondChooseCourseAction" parameter="secondchoose">
+			<forward name="secondchoose" path="/student_secondchoose.jsp"/>
+		</action>
+		<action path="/now_choose" type="com.tarena.group3.choosecoursesystem.action.SecondChooseCourseAction" parameter="now_choose">
+			<forward name="now_choose" path="/student_now_choose.jsp"/>
+		</action>
+		<action path="/password_update" type="com.tarena.group3.choosecoursesystem.action.SecondChooseCourseAction" parameter="password_update" validate="true" input="/student_password_update.jsp" name="courseForm">
+			<forward name="password_update" path="/student_password_update.jsp"/>
+		</action>
+		<action path="/see_credit" type="com.tarena.group3.choosecoursesystem.action.SecondChooseCourseAction" parameter="see_credit">
+			<forward name="see_credit" path="/student_see_credit.jsp"/>
+		</action>
+		<action path="/add_course" type="com.tarena.group3.choosecoursesystem.action.SecondChooseCourseAction" parameter="add_course">
+			<forward name="secondchoose" path="/student_secondchoose.jsp"/>
+		</action>
+	</action-mappings>
+	<controller processorClass="org.springframework.web.struts.DelegatingRequestProcessor"></controller>
+	<message-resources parameter="res_course" />
+	<plug-in
+		className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation"
+			value="/WEB-INF/secondChooseCourse-action.xml" />
+	</plug-in>
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property property="pathnames"
+         value="/WEB-INF/validator-rules.xml, /WEB-INF/validation_course.xml"/>
+      </plug-in>
+</struts-config>
+
